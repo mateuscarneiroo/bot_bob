@@ -19,15 +19,15 @@ driver.get('http://web.whatsapp.com')
 driver.maximize_window()
 
 #Localizando o arquivo a ser lido com as conversas e salvando as linhas em uma variavel
-for treino in os.listdir("C:\\Users\\Carneiroooo\\Desktop\\IA\\dicionarios"):
+for treino in os.listdir("C:\\Users\\NOME DO DIRETÓRIO\\dicionarios"):
         if (treino == "frases.txt"):
-            frases_f = open("C:\\Users\\Carneiroooo\\Desktop\\IA\\dicionarios" +'\\'+treino, 'r', encoding='utf-8').readlines()
+            frases_f = open("C:\\Users\\NOME DO DIRETÓRIO\\dicionarios" +'\\'+treino, 'r', encoding='utf-8').readlines()
             trainer.train(frases_f)
             break
 
 input('Quando colocar o QR code aperte enter')
 
-name = 'Carneiro' #nome do grupo ou pessoa
+name = '' #nome do grupo ou pessoa
 
 #variáveis
 sentimento = 0.5 #sentimento começa neutro // <0.5 triste // >0.5 feliz
@@ -1083,7 +1083,7 @@ while True:
             print('b')
             if user_msg not in frases_f:
                 print('d')
-                for treinor in os.listdir("C:\\Users\\Carneiroooo\\Desktop\\IA\\dicionarios"):
+                for treinor in os.listdir("C:\\Users\\NOME DO DIRETÓRIO\\dicionarios"):
                     print('f')
                     antelast = len(msg_user) - 2
                     antetext = msg_user[antelast].find_element_by_css_selector(
@@ -1093,7 +1093,7 @@ while True:
                         'span.selectable-text').text  # vai pegar a propria mensagem enviada
                     if not os.path.exists("frases2.txt"):
                         print('c')
-                        frasess = open("C:\\Users\\Carneiroooo\\Desktop\\IA\\\dicionarios" + '\\' + "frases.txt", 'a',
+                        frasess = open("C:\\Users\\NOME DO DIRETÓRIO\\\dicionarios" + '\\' + "frases.txt", 'a',
                                        encoding='utf-8')
                         frasess.write(antetext + '\n')
                         frasess.write(text + '\n')
@@ -1124,12 +1124,12 @@ while True:
             while True:
                 play = msg_user[last].find_element_by_class_name('_1h3dW').click()
                 time.sleep(15)
-                if os.path.exists("C:\\Users\\Carneiroooo\\Desktop\\IA\\speech_recognition.txt"):
+                if os.path.exists("C:\\Users\\NOME DO DIRETÓRIO\\speech_recognition.txt"):
                     print('audio')
                     # Localizando o arquivo a ser lido com as conversas escutadas e salvando a ultima linha em uma variável
-                    for escuta in os.listdir("C:\\Users\\Carneiroooo\\Desktop\\IA"):
+                    for escuta in os.listdir("C:\\Users\\NOME DO DIRETÓRIO\\IA"):
                         if (escuta == "speech_recognition.txt"):
-                            escuta_e = open("C:\\Users\\Carneiroooo\\Desktop\\IA" + '\\' + escuta, 'r',
+                            escuta_e = open("C:\\Users\\NOME DO DIRETÓRIO\\IA" + '\\' + escuta, 'r',
                                             encoding='utf-8')
                             escuta_e_op = escuta_e.readlines()
                             qnt_escuta_e = len(escuta_e_op) - 1
